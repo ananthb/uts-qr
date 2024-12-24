@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "elm": "^0.19.1-6",
+    "wrangler": "^3.99.0"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "qrcode": "^1.5.4",
+    "qrcode-svg": "^1.1.0"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "elm make src/Main.elm --output=public/app.js --optimize",
+    "deploy": "wrangler pages deploy"
+  }
+}
