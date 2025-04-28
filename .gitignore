@@ -4,3 +4,4 @@ node_modules
 
 # Elm output
 /public/app.js
+.direnv
