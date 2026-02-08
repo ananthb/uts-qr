@@ -283,9 +283,9 @@ viewHeader device =
             ]
 
         children =
-            [ Element.image [ Element.centerX ]
-                { src = "favicon-96x96.png"
-                , description = "Logo"
+            [ Element.image [ Element.centerX, Element.width (Element.px 80) ]
+                { src = "logo.svg"
+                , description = "UTS QR Logo"
                 }
             , text "UTS Booking QR Code Generator"
                 |> Element.el
