@@ -1,7 +1,10 @@
 import * as aesjs from "aes-js";
 import QRCode from "qrcode/lib/server";
 
-export async function onRequestGet({ request, env }) {
+// Dummy key for educational/demo purposes only - produces non-functional QR codes
+const DEMO_KEY = "DEMOKEY123456789";
+
+export async function onRequestGet({ request }) {
 	const { searchParams } = new URL(request.url);
 	const name = searchParams.get("name");
 	const code = searchParams.get("code");
@@ -14,8 +17,8 @@ export async function onRequestGet({ request, env }) {
 		});
 	}
 
-	// Create a QR code with the given parameters;
-	const text = encrypt(env.UTS_QR_KEY, `${name.toUpperCase()}:${code.toUpperCase()}:${latitude}:${longitude}`);
+	// Create a QR code with the given parameters using demo key
+	const text = encrypt(DEMO_KEY, `${name.toUpperCase()}:${code.toUpperCase()}:${latitude}:${longitude}`);
 	const qrCode = await QRCode.toString(text, { type: "svg" });
 	return new Response(qrCode, { headers: { "Content-Type": "image/svg+xml" } });
 }

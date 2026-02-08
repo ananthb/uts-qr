@@ -1,6 +1,9 @@
 import * as aesjs from "aes-js";
 
-export async function onRequestPost({ request, env }) {
+// Dummy key for educational/demo purposes only - matches genqr.js
+const DEMO_KEY = "DEMOKEY123456789";
+
+export async function onRequestPost({ request }) {
 	const data = await request.text();
 
 	if (!data) {
@@ -9,7 +12,7 @@ export async function onRequestPost({ request, env }) {
 		});
 	}
 
-	const text = decrypt(env.UTS_QR_KEY, data);
+	const text = decrypt(DEMO_KEY, data);
 
 	const parts = text.split(":");
 	if (parts.length !== 4) {
