@@ -1,5 +1,7 @@
 # UTS QR Code Generator
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ananthb/uts-qr)
+
 ## Build
 
 Install [Elm](https://elm-lang.org/).
