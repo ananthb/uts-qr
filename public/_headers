@@ -1,5 +1,2 @@
-/app.js
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
-
 /logo.svg
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
